@@ -24,7 +24,7 @@ function errorHandler(err, req, res, next) {
 }
 
 app.get('/', function(req, res) {
-  res.send('A man who knows meditation never dies!');
+  res.render('home');
 });
 
 app.use(errorHandler);
