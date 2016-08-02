@@ -7,15 +7,17 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 var app = express();
-
+//setup template handlebars as the template engine
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + '/public'));
-
-// app.use(myConnection(mysql, 'single'));
-
+//setup middleware
+//app.use(myConnection(mysql, dbOptions, 'single'));
+//parse application/x-www-form-urlcoded
+// app.use(bodyParser.urlcoded({extended: false}));
+//parse application/json
 app.use(bodyParser.json());
 
 function errorHandler(err, req, res, next) {
@@ -23,8 +25,13 @@ function errorHandler(err, req, res, next) {
     res.render('error', { error: err});
 }
 
+//setup the handlebars
 app.get('/', function(req, res) {
   res.render('home');
+});
+
+app.get('/products', function(req, res) {
+  res.render('products');
 });
 
 app.use(errorHandler);
