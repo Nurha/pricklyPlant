@@ -34,6 +34,10 @@ app.get('/products', function(req, res) {
   res.render('products');
 });
 
+app.get('/suppliers', function(req, res) {
+  res.render('suppliers');
+});
+
 app.use(errorHandler);
 
 var portNumber = process.env.CRUD_PORT_NR || 5000;
