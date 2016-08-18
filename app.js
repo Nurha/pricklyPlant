@@ -34,8 +34,8 @@ app.get('/products', function(req, res) {
   res.render('products');
 });
 
-app.get('/categories', function(req, res) {
-  res.render('categories');
+app.get('/saleItems', function(req, res) {
+  res.render('saleItems');
 });
 
 app.get('/suppliers', function(req, res) {
