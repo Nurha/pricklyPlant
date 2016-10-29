@@ -2,7 +2,7 @@
 
 var express = require('express'),
     exphbs = require('express-handlebars'),
-    // mysql = require('mysql'),
+    mysql = require('mysql'),
     myConnection = require('express-myconnection'),
     bodyParser = require('body-parser');
 
@@ -53,6 +53,12 @@ app.get('/sales', function(req, res) {
 app.get('/users', function(req, res) {
   res.render('users');
 });
+app.get('/login', function(req, res){
+res.render('login');
+});
+app.get('/signup', function(req, res){
+  res.render('signup');
+})
 app.use(errorHandler);
 
 var portNumber = process.env.CRUD_PORT_NR || 5000;
