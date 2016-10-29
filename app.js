@@ -7,6 +7,10 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 var app = express();
+
+var setup = require('./data/setup/setup');
+
+setup.setup();
 //setup template handlebars as the template engine
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
